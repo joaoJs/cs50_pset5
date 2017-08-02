@@ -1,0 +1,38 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+
+    It is a pneumoconiosis caused by inhalation of very fine silicate or quartz dust.
+    It is also the longest word in dictionary/large with a length of 45. If any input word is longer than that, it will not be considered. 
+
+1.  According to its man page, what does getrusage do?
+
+    getrusage - get resource usage --> returns resource usage measures for who;
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+
+    16;
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their 
+    contents?
+
+    For optimal efficiency, since you don't need to create new variables. And copying the values of before and after would be 
+    an expensive operation.  
+
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, 
+    convince us that you indeed understand how that function’s for loop works.
+    
+    Main opens the input text and saves it as fp. Then it uses this pointer to the file as the parameter of fgetc(), which returns
+    the character read as an unsigned char cast to an int or EOF on end of file or error. 
+    If the character is alphabetical and the string does not go beyond length 46, that word will be counted and main will check 
+    its spelling. If there is a mispelling, word will be printed and the mispellings variable will have its value incremented
+    by one.
+    
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string
+    like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+    
+    It would also be harder to filter words that contain only alphabetical characters.
+    
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+
+    The parameters for check and load are declared as constants because they should not be modified. 
+
+    
